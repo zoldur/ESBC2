@@ -6,7 +6,7 @@ CONFIGFOLDER='/root/.esbcoin'
 COIN_DAEMON='esbcoind'
 COIN_CLI='esbcoin-cli'
 COIN_PATH='/usr/local/bin/'
-COIN_TGZ='https://github.com/BlockchainFor/ESBC2/releases/download/2.0.4.2/esbcoin-cli_ubuntu-16.04-x64.tar.bz2'
+COIN_TGZ='https://github.com/BlockchainFor/ESBC2/releases/download/2.0.4.7/esbc-daemon-linux-x86_64-static.tar.gz'
 COIN_ZIP=$(echo $COIN_TGZ | awk -F'/' '{print $NF}')
 COIN_NAME='Esbc'
 COIN_PORT=32322
@@ -25,7 +25,7 @@ function download_node() {
   cd $TMP_FOLDER >/dev/null 2>&1
   wget -q $COIN_TGZ
   compile_error
-  tar xvjf $COIN_ZIP  >/dev/null 2>&1
+  tar xvzf $COIN_ZIP  >/dev/null 2>&1
   cp $COIN_DAEMON $COIN_CLI $COIN_PATH
   cd - >/dev/null 2>&1
   rm -rf $TMP_FOLDER >/dev/null 2>&1
